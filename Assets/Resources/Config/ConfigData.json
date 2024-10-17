@@ -1,0 +1,179 @@
+{
+  "currencySetups": {
+    "main": {
+      "currencyName": "empire credits",
+      "currencyShortName": "ec"
+    },
+    "things": {
+      "currencyName": "things",
+      "currencyShortName": "t"
+    }
+  },
+  "departments": {
+    "PDep":{
+      "displayName": "Production Department",
+      "cost": 0.0,
+      "isBought": true,
+      "parameters": {
+        "gain": 1.0
+      },
+      "blocks":{
+        "ABlock": {
+          "displayName": "Addition Block",
+          "displayLetter": "A",
+          "cost": 0.0,
+          "isBought": true,
+          "parameters":{
+            "cells": 16,
+            "cellBaseValue": 1.0,
+            "cellBaseCost": 1.0,
+            "cellCostExponent": 1.1,
+            "cellDivider": 1.0,
+            "currentCost": 1.0,
+            "cellsBought": 0,
+            "gain": 1.0
+          }
+        },
+        "MBlock": {
+          "displayName": "Multiplication Block",
+          "displayLetter": "M",
+          "cost": 0.0,
+          "isBought": true,
+          "parameters":{
+            "cells": 4,
+            "cellBaseValue": 2.0,
+            "cellBaseCost": 1.0,
+            "cellCostExponent": 1.1,
+            "cellDivider": 1.0,
+            "currentCost": 1.0,
+            "cellsBought": 0,
+            "gain": 1.0
+          }
+        },
+        "EBlock": {
+          "displayName": "Exponent Block",
+          "displayLetter": "E",
+          "cost": 10,
+          "isBought": false,
+          "parameters":{
+            "cells": 1,
+            "cellBaseValue": 2.0,
+            "cellBaseCost": 20.0,
+            "cellCostExponent": 2.0,
+            "cellDivider": 1.0,
+            "currentCost": 2000.0,
+            "cellsBought": 0,
+            "gain": 1.0
+          }
+        }
+      }
+    },
+    "MDep":{
+      "displayName": "Marketing Department",
+      "cost": 0.0,
+      "isBought": true,
+      "parameters": { 
+        "gain": 1.0
+      },
+      "blocks":{
+        "SBlock": {
+          "displayName": "Selling Block",
+          "displayLetter": "S",
+          "cost": 0.0,
+          "isBought": true,
+          "parameters":{
+            "cells": 5,
+            "cellBaseValue": 1.0,
+            "cellBaseCost": 1.1,
+            "cellCostExponent": 1.1,
+            "cellDivider": 1.0,
+            "currentCost": 1.1,
+            "cellsBought": 0,
+            "gain": 1.0
+          }
+        }
+      }
+    },
+    "RDep":{
+      "displayName": "Research Department",
+      "cost": 10.0,
+      "isBought": false,
+      "parameters": {
+        "gain": 0.0
+      },
+      "blocks":{
+        "IBlock":{
+          "displayName": "Innovation Block",
+          "displayLetter": "I",
+          "cost": 0.0,
+          "isBought": true,
+          "parameters":{}
+        }
+      }
+    },
+    "MngDep":{
+      "displayName": "Management Department",
+      "cost": 50.0,
+      "isBought": false,
+      "parameters": {
+        "gain": 0.0
+      },
+      "blocks":{
+        "PBlock":{
+          "displayName": "Placement Block",
+          "displayLetter": "P",
+          "cost": 0.0,
+          "isBought": true,
+          "parameters":{
+            "needRecalculateGraph": true,
+            "gridSize": 3,
+            "ABlock": 1.0,
+            "MBlock": 1.0,
+            "EBlock": 1.0,
+            "SBlock": 1.0
+          }
+        }
+      }
+    }    
+  },
+  "researches": {
+    "R1": {
+      "displayName":  "Additional+Additional power",
+      "description": "Add +1 Addition Block cells output",
+      "baseCost": 20,
+      "effectSign": "+"
+    },
+    "R2": {
+      "displayName":  "Production Chain",
+      "description": "Add +0.1 to Addition Block cells output for each bought Addition Block cell",
+      "baseCost": 40,
+      "effectSign": "+"
+    },
+    "R3":{
+      "displayName":  "Business cards? Business cards!",
+      "description": "Add +1 to Selling Block cells output",
+      "baseCost": 40,
+      "effectSign": "+"
+    },
+    "R4":{
+      "displayName":  "Marketing brainstorm",
+      "description": "Add +0.1 to Selling Block cells output for each bought cell in every block (that has cells)",
+      "baseCost": 40,
+      "effectSign": "+"
+    },
+    "R5":{
+      "displayName":  "Focusing crystals",
+      "description": "Add +0.5 to Multiplication Block output",
+      "baseCost": 40,
+      "effectSign": "+"
+    },
+    "R6":{
+      "displayName":  "Exponential Math System",
+      "description": "Add +0.01 to Exponent Block output for each cell blocks",
+      "baseCost": 30,
+      "effectSign": "+",
+      "attachedDepartment": "PDep",
+      "attachedBlock": "EBlock"
+    }
+  }
+}
